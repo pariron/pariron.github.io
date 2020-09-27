@@ -1,0 +1,164 @@
+@charset "utf-8";
+body{
+  padding:40px;
+  /* width:400px; */
+}
+article{
+  display:flex;
+}
+.flags,.teches{
+  user-select: none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-right:40px;
+}
+.lockTeam{
+  user-select: none;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.flag,.tech{
+font-size:45px;
+}
+.unlock{
+  /* color:red; */
+  font-size:45px;
+}
+
+.lock{
+  font-size:45px;
+  transform:scale(0);
+  position: absolute;
+}
+.flags [type="checkbox"]{
+  display: none;
+}
+.teches [type="checkbox"]{
+  display: none;
+}
+.lockTeam [type="checkbox"]{
+  display: none;
+}
+/* .lockTeam [type="ckeckbox"]{
+  display: none;
+} */
+.a,.b,.c{
+  width:100px;
+  height:100px;
+  border-radius: 50%;
+  background:gray;
+  position: absolute;
+  transform:scale(0);
+}
+.flags [type="checkbox"]:checked ~ .flag{
+  /* color:red; */
+  animation-name:flagMove;
+  animation-duration:.6s;
+  animation-fill-mode:forwards;
+  
+}
+
+@keyframes flagMove{
+  0%{transform:scale(0)}
+  50%{transform:scale(1.1)}
+  100%{transform:scale(1);
+       color:green;}
+}
+.flags [type="checkbox"]:checked ~ .a{
+  /* color:red; */
+  animation-name:aMove;
+  animation-duration:.6s;
+  animation-fill-mode:forwards;
+  
+}
+
+@keyframes aMove{
+  0%{transform:scale(0)}
+  50%{transform:scale(1.1)}
+  100%{transform:scale(1);
+       background:green;
+      opacity: 0;}
+}
+.teches [type="checkbox"]:checked ~ .tech{
+  /* color:red; */
+  animation-name:techMove;
+  animation-duration:.6s;
+  animation-fill-mode:forwards;
+  
+}
+
+@keyframes techMove{
+  0%{transform:scale(0)}
+  50%{transform:scale(1.1)}
+  100%{transform:scale(1);
+       color:gold;}
+}
+.teches [type="checkbox"]:checked ~ .b{
+  /* color:red; */
+  animation-name:bMove;
+  animation-duration:.6s;
+  animation-fill-mode:forwards;
+  
+}
+
+@keyframes bMove{
+  0%{transform:scale(0);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);
+       background:gold;
+      opacity: 0;}
+}
+
+.lockTeam [type="checkbox"]:checked ~ .lock{
+  /* color:red; */
+  animation-name:lockMan;
+  animation-duration:.6s;
+  animation-fill-mode:forwards;
+}
+.lockTeam [type="checkbox"]:checked ~ .unlock{
+  /* color:red; */
+  animation-name:dMove;
+  animation-duration:.6s;
+  animation-fill-mode:forwards;
+}
+
+@keyframes lockMan{
+  0%{transform:scale(0);}
+  50%{transform:scale(1.1);}
+  100%{transform:scale(1);
+  color:blue;}
+}
+.lockTeam [type="checkbox"]:checked ~ .c{
+  /* color:red; */
+  animation-name:cMove;
+  animation-duration:.6s;
+  animation-fill-mode:forwards;
+}
+@keyframes cMove{
+  0%{
+    transform:scale(0);
+  }
+  50%{
+    transform:scale(1.1);
+  }
+  100%{
+    transform:scale(1);
+    background:blue;
+      opacity: 0;
+  }
+}
+@keyframes dMove{
+  0%{
+    transform:scale(0);
+  }
+  50%{
+    transform:scale(1.1);
+  }
+  100%{
+    transform:scale(1);
+    /* background:rgba(0, 0, 255, 0.568); */
+      opacity: 0;
+  }
+}
